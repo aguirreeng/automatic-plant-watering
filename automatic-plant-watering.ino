@@ -118,17 +118,17 @@ unsigned long get_pumping_time(int pump_read)
 {
     if (pump_read < 445)
     {
-        return 15UL * SECOND;
+        return 30UL * SECOND;
     }
     else if (pump_read < 840)
     {
-        return 30UL * SECOND;
+        return 60UL * SECOND;
     }
     else if (pump_read < 950)
     {
-        return 45UL * SECOND;
+        return 90UL * SECOND;
     }
-    return 60UL * SECOND;
+    return 120UL * SECOND;
 }
 
 int read_average(int pin, int number_reads, bool exclude_extremes)
